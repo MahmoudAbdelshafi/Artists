@@ -11,7 +11,7 @@ import UIKit
 class ArtistViewController: UIViewController{
     
   
-    var artists = [Artist]()
+    var artists = [Work]()
     
     
     //
@@ -53,8 +53,8 @@ extension ArtistViewController:UITableViewDataSource {
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath) as? ArtistTableViewCell
-        let work = artists[indexPath.row].works
-        cell?.workLabel.text = work[indexPath.row].title
+        let work = artists[indexPath.row].title
+        cell?.workLabel.text = work
         
         return cell!
     }
