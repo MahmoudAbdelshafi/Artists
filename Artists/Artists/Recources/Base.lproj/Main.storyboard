@@ -17,7 +17,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NSl-ys-bDh">
                                 <rect key="frame" x="0.0" y="88" width="414" height="788"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mainCell" rowHeight="317" id="wAI-vy-BhY" customClass="MainTableViewCell" customModule="Artists" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="317"/>
@@ -69,7 +68,6 @@
                                             <outlet property="artistImage" destination="zbk-Wx-YXx" id="WzY-zf-Svf"/>
                                             <outlet property="bioLabel" destination="dhW-fP-tZI" id="IXX-ie-Vqu"/>
                                             <outlet property="nameLabel" destination="3DT-W0-lea" id="43Z-Kw-E2d"/>
-                                            <segue destination="5UG-jU-XjI" kind="show" identifier="mainToDetail" id="eph-9L-RE1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -91,6 +89,7 @@
                     <navigationItem key="navigationItem" title="SwiftyCamp" id="Qhd-VE-uIf"/>
                     <connections>
                         <outlet property="mainTableView" destination="NSl-ys-bDh" id="AWq-W2-rk0"/>
+                        <segue destination="5UG-jU-XjI" kind="show" identifier="mainToDetail" id="G99-sn-omY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -109,7 +108,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="788"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="422" id="JuS-0V-Jpy" customClass="ArtistTableViewCell" customModule="Artists" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="artistCell" rowHeight="422" id="JuS-0V-Jpy" customClass="ArtistTableViewCell" customModule="Artists" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JuS-0V-Jpy" id="qPK-OJ-4xl">
@@ -156,9 +155,14 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5UG-jU-XjI" id="Ixo-NO-6J8"/>
+                                    <outlet property="delegate" destination="5UG-jU-XjI" id="sq2-En-yay"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Zaa-Sf-egT" firstAttribute="top" secondItem="wKB-nl-FdI" secondAttribute="top" id="F6C-GP-kCf"/>
                             <constraint firstItem="Zaa-Sf-egT" firstAttribute="trailing" secondItem="wKB-nl-FdI" secondAttribute="trailing" id="Xqb-iU-aWD"/>
@@ -184,6 +188,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wQG-m6-Yoa">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
