@@ -45,7 +45,9 @@ class MainViewController: UIViewController,ArtistModelDeleget {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mainToDetail" {
             let destVC = segue.destination as! ArtistViewController
-            destVC.artists = sender as? [Work] 
+        
+            
+            destVC.artist = sender as? Artist
 
         }
     }
@@ -108,12 +110,10 @@ extension MainViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
-        let art = artists[indexPath.row].works
-        
-        
-        
-      performSegue(withIdentifier: "mainToDetail", sender: art)
-        
+       
+        let artistWork = artists[indexPath.row]
+        performSegue(withIdentifier: "mainToDetail", sender: artistWork)
+       
     }
     
     

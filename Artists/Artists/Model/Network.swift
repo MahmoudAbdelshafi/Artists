@@ -43,9 +43,6 @@ func loadData() {
         
         let downloadeArtists = try JSONDecoder().decode(Artists.self, from: data )
       self.artists = downloadeArtists.artists
-        //print(artists)
-        
-        
         
         if self.deleget != nil{
             deleget?.dataReady()
@@ -62,8 +59,4 @@ func loadData() {
     
     
     
-    func parseData(){
-      
-        
-    }
 }

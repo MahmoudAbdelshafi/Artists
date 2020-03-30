@@ -11,7 +11,9 @@ import UIKit
 class ArtistViewController: UIViewController{
     
   
-    var artists:[Work]?
+
+    var artist:Artist?
+    
     
     //
    // MARK:- IBOutlets
@@ -23,8 +25,10 @@ class ArtistViewController: UIViewController{
     
     
     
+
     override func viewDidLoad() {
-       
+        self.title = artist?.name
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
    
@@ -45,16 +49,19 @@ class ArtistViewController: UIViewController{
 
 extension ArtistViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return artist?.works.count ?? 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "artistCell", for: indexPath) as? ArtistTableViewCell
-        let m = artists?[indexPath.row]
-        cell?.workLabel.text = m?.title
-        cell?.workImage.image = UIImage(named: "8")
+        let artistWork = artist?.works
+        cell?.workLabel?.text = artistWork?[indexPath.row].title
+        
+
+       cell?.workImage.image = UIImage(named: "8")
+//
         
         return cell!
     }
