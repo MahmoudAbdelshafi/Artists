@@ -124,6 +124,9 @@
                                                     <state key="normal" title="Select For More Info &gt;">
                                                         <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="moreInfoPressed:" destination="JuS-0V-Jpy" eventType="touchUpInside" id="K7N-Qi-yGZ"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzv-ID-mhK">
                                                     <rect key="frame" x="20" y="324" width="374" height="25"/>
@@ -174,11 +177,53 @@
                     <navigationItem key="navigationItem" id="lYL-cR-CLk"/>
                     <connections>
                         <outlet property="workTableView" destination="Zaa-Sf-egT" id="PTO-pY-cH0"/>
+                        <segue destination="SxY-RD-c0f" kind="show" identifier="info" id="xdj-QR-fVq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2E-tn-O1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1836" y="119"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="l4k-eY-cy6">
+            <objects>
+                <viewController id="SxY-RD-c0f" customClass="InfoViewController" customModule="Artists" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w2c-mZ-rd6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kLv-en-gSL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Jacob de Gheyn III, also known as Jacob III de Gheyn (1596–1641), was a Dutch Golden Age engraver, son of Jacob de Gheyn II, canon of Utrecht (city), and the subject of a 1632 oil painting by Rembrandt. The portrait is half of a pair of pendent portraits. The other piece is a portrait of de Gheyn's friend Maurits Huygens, wearing similar clothing (ruffs and black doublets) and facing the opposite direction.</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="23"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kLv-en-gSL" firstAttribute="top" secondItem="1dx-Qz-KgM" secondAttribute="top" id="BGj-3c-ckc"/>
+                            <constraint firstAttribute="bottom" secondItem="kLv-en-gSL" secondAttribute="bottom" id="Nqe-0D-xkt"/>
+                            <constraint firstItem="kLv-en-gSL" firstAttribute="leading" secondItem="1dx-Qz-KgM" secondAttribute="leading" id="Pkm-cH-aUQ"/>
+                            <constraint firstItem="kLv-en-gSL" firstAttribute="trailing" secondItem="1dx-Qz-KgM" secondAttribute="trailing" id="ndb-Bm-G6u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1dx-Qz-KgM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nUl-8o-hOT"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="kLv-en-gSL" id="Iwz-CC-iY6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8So-kX-qSu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2716" y="119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="daY-hb-ic7">

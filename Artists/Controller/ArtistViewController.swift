@@ -34,11 +34,21 @@ class ArtistViewController: UIViewController{
    
 
 }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "info" {
+            let destVC = segue.destination as! InfoViewController
+        
+            
+            destVC.info = sender as! String
+    }
 
 
 }
 
-
+}
 
 
 
@@ -61,17 +71,41 @@ extension ArtistViewController:UITableViewDataSource {
         
 
        cell?.workImage.image = UIImage(named: "8")
-//
+        cell?.cellDeleget = self
+        cell?.index = indexPath
         
         return cell!
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return self.view.frame.size.width / 320 * 280
-    
+
         
             }
     
     
+  //
+ // MARK: - Table View Delgate method
+//
+
+extension ArtistViewController: UITableViewDelegate{
+    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      
+        
+    }
+}
 
 
+//MARK: - Table View Info Protocol
+
+extension ArtistViewController: InfoDeleget{
+    func infoButtonFunc(index: Int) {
+        if let work = artist?.works[index]{ 
+        let info = work.info
+        performSegue(withIdentifier: "info", sender: info)
+        
+    }
+    }
+    
+    
+}

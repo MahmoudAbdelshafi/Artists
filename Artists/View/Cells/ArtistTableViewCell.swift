@@ -8,9 +8,17 @@
 
 import UIKit
 
+//MARK: - TableView Action Protocol
+protocol InfoDeleget {
+    func infoButtonFunc(index:Int)
+}
+
+
+
 class ArtistTableViewCell: UITableViewCell {
    
-    
+    var cellDeleget:InfoDeleget?
+    var index:IndexPath?
     //
   // MARK: - IBOutlets
  //
@@ -27,5 +35,13 @@ class ArtistTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func moreInfoPressed(_ sender: Any) {
+        
+        if cellDeleget != nil{
+            cellDeleget!.infoButtonFunc(index: index!.row)
+        }
+    }
+ 
+    
 }
