@@ -193,7 +193,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kLv-en-gSL">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="8" y="88" width="398" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -211,8 +211,8 @@
                         <constraints>
                             <constraint firstItem="kLv-en-gSL" firstAttribute="top" secondItem="1dx-Qz-KgM" secondAttribute="top" id="BGj-3c-ckc"/>
                             <constraint firstAttribute="bottom" secondItem="kLv-en-gSL" secondAttribute="bottom" id="Nqe-0D-xkt"/>
-                            <constraint firstItem="kLv-en-gSL" firstAttribute="leading" secondItem="1dx-Qz-KgM" secondAttribute="leading" id="Pkm-cH-aUQ"/>
-                            <constraint firstItem="kLv-en-gSL" firstAttribute="trailing" secondItem="1dx-Qz-KgM" secondAttribute="trailing" id="ndb-Bm-G6u"/>
+                            <constraint firstItem="kLv-en-gSL" firstAttribute="leading" secondItem="1dx-Qz-KgM" secondAttribute="leading" constant="8" id="Pkm-cH-aUQ"/>
+                            <constraint firstItem="kLv-en-gSL" firstAttribute="trailing" secondItem="1dx-Qz-KgM" secondAttribute="trailing" constant="-8" id="ndb-Bm-G6u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1dx-Qz-KgM"/>
                     </view>

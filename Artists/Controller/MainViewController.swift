@@ -26,7 +26,12 @@ class MainViewController: UIViewController,ArtistModelDeleget {
     override func viewDidLoad() {
         model.deleget = self
         model.loadData()
-        
+        mainTableView.translatesAutoresizingMaskIntoConstraints = false
+        mainTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        mainTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        mainTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        mainTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+
     }
 
     func dataReady() {
@@ -81,11 +86,13 @@ extension MainViewController:UITableViewDataSource {
         if let imageForRow = UIImage(named: artists[indexPath.row].image), indexPath.row >= image.count {
             
                 
-               //cell?.imageView?.image = imageForRow
+               cell?.artistImage?.image = imageForRow
+            
             
             
            } else {
-               cell?.imageView?.image = UIImage(named: "nothing.jpg")
+               cell?.artistImage?.image = UIImage(named: "0")
+            
            }
         
         return cell!
