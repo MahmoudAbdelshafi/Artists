@@ -9,31 +9,27 @@
 import UIKit
 
 class MainTableViewCell: UITableViewCell {
-
-      //
-     // MARK: - Outlets
+    
     //
-  
+    // MARK: - Outlets
+    //
+    
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var bioLabel: UILabel!
-    
     @IBOutlet weak var artistImage: UIImageView!
     
     
     override func awakeFromNib() {
-        
-        
         super.awakeFromNib()
-      
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
     
-
+    
 }

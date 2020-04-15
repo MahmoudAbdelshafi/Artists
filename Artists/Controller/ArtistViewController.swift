@@ -10,14 +10,14 @@ import UIKit
 
 class ArtistViewController: UIViewController{
     
-  
-
+    
+    
     var artist:Artist?
     
     
     //
-   // MARK:- IBOutlets
-  //
+    // MARK:- IBOutlets
+    //
     
     
     @IBOutlet weak var workTableView: UITableView!
@@ -25,36 +25,36 @@ class ArtistViewController: UIViewController{
     
     
     
-
+    
     override func viewDidLoad() {
         self.title = artist?.name
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-   
-
-}
+        
+        
+    }
     
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "info" {
             let destVC = segue.destination as! InfoViewController
-        
+            
             
             destVC.info = sender as! String
+        }
+        
+        
     }
-
-
-}
-
+    
 }
 
 
 
 
-  //
- // MARK: - Table View Data Source
+//
+// MARK: - Table View Data Source
 //
 
 extension ArtistViewController:UITableViewDataSource {
@@ -69,28 +69,28 @@ extension ArtistViewController:UITableViewDataSource {
         let artistWork = artist?.works
         cell?.workLabel?.text = artistWork?[indexPath.row].title
         
-
-       cell?.workImage.image = UIImage(named: "8")
+        
+        cell?.workImage.image = UIImage(named: "8")
         cell?.cellDeleget = self
         cell?.index = indexPath
         
         return cell!
     }
     
+    
+    
+}
 
-        
-            }
-    
-    
-  //
- // MARK: - Table View Delgate method
+
+//
+// MARK: - Table View Delgate method
 //
 
 extension ArtistViewController: UITableViewDelegate{
     
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
+        
         
     }
 }
@@ -101,10 +101,10 @@ extension ArtistViewController: UITableViewDelegate{
 extension ArtistViewController: InfoDeleget{
     func infoButtonFunc(index: Int) {
         if let work = artist?.works[index]{ 
-        let info = work.info
-        performSegue(withIdentifier: "info", sender: info)
-        
-    }
+            let info = work.info
+            performSegue(withIdentifier: "info", sender: info)
+            
+        }
     }
     
     

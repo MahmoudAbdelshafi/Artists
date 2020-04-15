@@ -134,9 +134,17 @@
 				39C7861E2430DEA300C92CF4 /* Artists.swift */,
 				39C786202430EBF600C92CF4 /* Artist.swift */,
 				39C786222430EC2100C92CF4 /* Work.swift */,
-				39C786242430F43100C92CF4 /* Network.swift */,
+				39DE73A12447BF0A00FE6101 /* Network */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		39DE73A12447BF0A00FE6101 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				39C786242430F43100C92CF4 /* Network.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

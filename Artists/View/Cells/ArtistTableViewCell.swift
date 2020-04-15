@@ -17,14 +17,20 @@ protocol InfoDeleget {
 
 class ArtistTableViewCell: UITableViewCell {
    
+    
+    //MARK:- instance and properties
+    
     var cellDeleget:InfoDeleget?
     var index:IndexPath?
-    //
-  // MARK: - IBOutlets
- //
+    
+  
+    // MARK: - IBOutlets
+ 
     @IBOutlet weak var moreInfoButton: UIButton!
     @IBOutlet weak var workImage: UIImageView!
     @IBOutlet weak var workLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
